@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dog Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            min-height: 60px; /* Ensures space for the fact */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #4CAF50, #81c784);
+            color: white;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #66bb6a, #4CAF50);
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Dog Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const dogFacts = [
+            "Dogs were domesticated from wolves around 20,000 to 40,000 years ago, making them one of the first domesticated animals.",
+            "There are over 340 different dog breeds recognized worldwide, each with unique characteristics and traits.",
+            "Dogs have an extraordinary sense of smell, estimated to be between 10,000 to 100,000 times more sensitive than humans.",
+            "Dogs can hear sounds at frequencies as high as 65,000 Hz, while humans can only hear up to about 20,000 Hz.",
+            "Dogs communicate through a combination of vocalizations, body language, and facial expressions.",
+            "The average lifespan of a dog varies by breed, but it typically ranges from 10 to 15 years.",
+            "Dogs are naturally pack animals, which means they thrive on social interaction.",
+            "Dogs are known for their intelligence and can learn a variety of commands and tricks.",
+            "A dog's tail wagging can indicate different emotions.",
+            "Just like human fingerprints, each dog has a unique nose print that can be used for identification.",
+            "Dogs are omnivores, meaning they can eat a variety of foods, including meat, vegetables, and grains.",
+            "Many dogs are trained to assist people with disabilities or provide emotional support.",
+            "Dogs have a sense of time and can be trained to recognize routines.",
+            "Dogs bark for various reasons, including to alert their owners or express excitement.",
+            "Archaeological evidence suggests that dogs have been companions to humans for thousands of years."
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * dogFacts.length);
+            document.getElementById('fact').innerText = dogFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
